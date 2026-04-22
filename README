@@ -1,0 +1,50 @@
+# 🕵️ Git Activity: The Forensic Audit of CalculatorPro
+
+Welcome to the team! You have been brought in to stabilize **CalculatorPro**, a high-precision TypeScript library.
+
+A previous developer made some "unauthorized changes" to our core logic and then tried to bury those changes under a pile of documentation commits. Our automated alerts show that the **addition** logic is currently failing.
+
+**Your Mission:** Use your Git skills to investigate the repository's history, identify the exact moment the logic was corrupted, and restore the code to its functional state without erasing the historical record.
+
+---
+
+## 📋 Ground Rules (⚠️ Non-Negotiable)
+
+To maintain our audit trail, you must follow these strict engineering standards:
+
+- **Do Not Rewrite History:** Commands that delete or modify past commits are strictly prohibited.
+- **No Manual Patching:** Do not fix the bug by manually editing the code in your IDE. You must use Git's built-in tools to undo the specific commit that caused the error.
+- **Stay on Track:** Work exclusively on the `main` branch.
+
+---
+
+## 🚀 Mission 1: The Forensic Investigation
+
+The $add(a, b)$ function in `calculator.ts` is no longer working as expected. We need the unique identifier of the change that broke it.
+
+1.  **Investigate the History:** Use your terminal to explore the previous git commits. You are looking for a change related to "Refactoring" or "Optimizing" the addition logic.
+2.  **Verify the Culprit:** Ensure you have found the specific commit where the logic was changed from $a + b$ to something else.
+3.  **Log your Findings:** Create a file named `bug-commit.txt` in the root directory.
+4.  **Save the SHA:** Paste the **Full SHA** (the long hexadecimal string) of the offending commit into that file and save it.
+
+---
+
+## 🚑 Mission 2: The Diplomatic Restoration
+
+Now that you've identified the bug, we need to undo it. However, we want to keep a record of what happened for our weekly post-mortem meeting.
+
+1.  **Undo the Change:** Apply a git command that creates a _new_ commit which performs the exact opposite of the bug-inducing commit.
+2.  **Handle the Message:** Git will ask you to confirm a commit message. Use the default message provided by the tool.
+3.  **Verify:** Open `calculator.ts`. The logic for the `add` function should now correctly return $a + b$ once again.
+
+---
+
+## 📤 Verification
+
+**Check the Results:** Navigate to the **Actions** tab in this GitHub repository. The Autograding script will verify:
+_ If the SHA in `bug-commit.txt` is correct.
+_ If you used the proper Git command to undo the changes. \* If the `calculator.ts` file is functioning correctly.
+
+---
+
+**Good luck, Detective. The integrity of our codebase is in your hands.**
