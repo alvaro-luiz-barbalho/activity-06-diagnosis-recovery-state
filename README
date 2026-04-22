@@ -18,6 +18,18 @@ To maintain our audit trail, you must follow these strict engineering standards:
 
 ---
 
+## ⚠️ Mandatory: Ensure the full history is downloaded
+
+To ensure that history-based tools (like git log) work correctly and the Autograding tests can verify your progress, you must run the following commands in your terminal as soon as you open this project:
+
+```bash
+git remote add professor https://github.com/persapiens-classes/activity-06-diagnosis-recovery-state.git
+git fetch professor
+git merge professor/main --allow-unrelated-histories -X ours -m "feat: Recovering history"
+```
+
+---
+
 ## 🚀 Mission 1: The Forensic Investigation
 
 The $add(a, b)$ function in `calculator.ts` is no longer working as expected. We need the unique identifier of the change that broke it.
